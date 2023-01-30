@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <td>
+      <a routerLink="/public-page">[PUBLIC-PAGE]</a>
+      <a routerLink="/restricted-page" *ngIf="isLoggedIn()">[RESTRICTED-PAGE]</a>
+    </td>
+    <td>
+      <button  (click)="login()">Login</button>
+    </td>
+    <td>
+      <button (click)="logout()">Logout</button>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <h1>MICROSOFT AZURE ACTIVE DIRECTORY</h1>
+  <h2>Protected Page</h2>
+  <p *ngIf="!isLoggedIn()">You are not logged in.</p>
+  <p *ngIf="isLoggedIn()">You are logged in.</p>
+</div>
+
+<router-outlet></router-outlet>
